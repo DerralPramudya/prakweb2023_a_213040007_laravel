@@ -10,4 +10,4 @@
     </article>
     @endforeach
 
-@endsection
+@endsection 

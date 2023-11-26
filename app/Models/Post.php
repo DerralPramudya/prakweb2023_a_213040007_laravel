@@ -15,7 +15,7 @@ class Post
         ],
         [
             "title" => "Judul Kedua",
-            "slug" => "judul-kedua",
+            "slug" => "judul-kedua", 
             "author" => "Deni",
             "body" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quisquam illo totam error unde eveniet cupiditate minus suscipit. Cupiditate nulla esse fugit alias illo. Quas suscipit, cumque nulla et ipsum blanditiis voluptatem odit! Voluptas nisi harum, voluptatem asperiores blanditiis dolorum, incidunt soluta est neque esse totam! Natus dolore reiciendis quibusdam, aliquid debitis, velit molestiae ad, autem dicta laborum mollitia? Iste."
         ],

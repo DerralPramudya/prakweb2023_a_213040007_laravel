@@ -8,4 +8,4 @@
 </article>
 
 <a href="/blog">Back to Posts</a>
-@endsection
+@endsection 

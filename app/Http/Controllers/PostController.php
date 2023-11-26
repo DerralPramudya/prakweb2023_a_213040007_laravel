@@ -22,4 +22,4 @@ class PostController extends Controller
             "post" => Post::find($slug)
         ]);
     }
-}
+} 
