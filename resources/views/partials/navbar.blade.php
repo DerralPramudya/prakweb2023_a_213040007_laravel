@@ -1,3 +1,6 @@
+@php
+$active = $active ?? '';
+@endphp
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
         <a class="navbar-brand" href="/">WPU Blog</a>
