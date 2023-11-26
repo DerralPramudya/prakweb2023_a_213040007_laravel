@@ -1,7 +1,6 @@
 @php
 $active = $active ?? '';
-@endphp
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+@endphp<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
         <a class="navbar-brand" href="/">WPU Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,6 +21,12 @@ $active = $active ?? '';
                 <li class="nav-item">
                   <a class="nav-link {{ ($active === "categories") ? 'active' : '' }}" href="/categories">Categories</a>
               </li>
+            </ul>
+  
+            <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                  </li>
             </ul>
         </div>
     </div>
