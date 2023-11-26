@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Category;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\CssSelector\Node\FunctionNode;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
@@ -13,7 +12,8 @@ class Post extends Model
 
     // protected $fillable = ['title','excerpt','body'];
     protected $guarded = ['id'];
-
+    protected $with = ['category','author'];
+    
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
