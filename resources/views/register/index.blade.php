@@ -41,7 +41,7 @@
                     @error('password')
                     <div class="invalid-feedback">
                         {{ $message }}
-                    </div>
+                    </div> 
                     @enderror
                 </div>
                 <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Register</button>

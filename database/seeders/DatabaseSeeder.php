@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'asepdoni',
         //     'email' => 'asepd@gmail.com',
         //     'password' => bcrypt('12345')
-        // ]);
+        // ]); 
         User::factory(3)->create();
         Category::create([
             'name' => 'Gaming',
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
         //     'category_id' => 1,
         //     'user_id' => 1
         // ]);
-
+ 
         // Post::create([
         //     'title' => 'Judul dua',
         //     'slug' => 'judul-dua',
