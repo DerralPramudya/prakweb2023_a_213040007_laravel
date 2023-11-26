@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
 
 Route::get('/about', function () {
@@ -25,6 +27,57 @@ Route::get('/about', function () {
     ]);
 });
 
+
 Route::get('/blog', function () {
-    return view('posts');
-}); 
+    $blog_posts = [
+        [
+            "title" => "Judul  Pertama",
+            "slug" => "judul-pertama",
+            "author" => "Tono Al",
+            "body" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quisquam illo totam error unde eveniet cupiditate minus suscipit. Cupiditate nulla esse fugit alias illo. Quas suscipit, cumque nulla et ipsum blanditiis voluptatem odit! Voluptas nisi harum, voluptatem asperiores blanditiis dolorum, incidunt soluta est neque esse totam! Natus dolore reiciendis quibusdam, aliquid debitis, velit molestiae ad, autem dicta laborum mollitia? Iste."
+        ],
+        [
+            "title" => "Judul Kedua",
+            "slug" => "judul-kedua",
+            "author" => "Asep",
+            "body" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quisquam illo totam error unde eveniet cupiditate minus suscipit. Cupiditate nulla esse fugit alias illo. Quas suscipit, cumque nulla et ipsum blanditiis voluptatem odit! Voluptas nisi harum, voluptatem asperiores blanditiis dolorum, incidunt soluta est neque esse totam! Natus dolore reiciendis quibusdam, aliquid debitis, velit molestiae ad, autem dicta laborum mollitia? Iste."
+        ],
+        ];
+         
+    return view('posts', [
+        "title" => "Posts",
+        "posts" => $blog_posts
+    ]);
+});
+
+//halaman single post
+Route::get('posts/{slug}', function($slug) {
+    
+    $blog_posts = [
+        [
+            "title" => "Judul Pertama",
+            "slug" => "judul-pertama",
+            "author" => "Asep",
+            "body" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quisquam illo totam error unde eveniet cupiditate minus suscipit. Cupiditate nulla esse fugit alias illo. Quas suscipit, cumque nulla et ipsum blanditiis voluptatem odit! Voluptas nisi harum, voluptatem asperiores blanditiis dolorum, incidunt soluta est neque esse totam! Natus dolore reiciendis quibusdam, aliquid debitis, velit molestiae ad, autem dicta laborum mollitia? Iste."
+        ],
+        [
+            "title" => "Judul Kedua",
+            "slug" => "judul-kedua",
+            "author" => "Deni",
+            "body" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quisquam illo totam error unde eveniet cupiditate minus suscipit. Cupiditate nulla esse fugit alias illo. Quas suscipit, cumque nulla et ipsum blanditiis voluptatem odit! Voluptas nisi harum, voluptatem asperiores blanditiis dolorum, incidunt soluta est neque esse totam! Natus dolore reiciendis quibusdam, aliquid debitis, velit molestiae ad, autem dicta laborum mollitia? Iste."
+        ],
+        ];
+
+    $new_post = [];
+    foreach($blog_posts as $post) {
+        if($post["slug"] === $slug) {
+            $new_post = $post;
+        }
+    }    
+
+    
+    return view('post', [
+        "title" => "Single Post",
+        "post" => $new_post
+    ]);
+});
